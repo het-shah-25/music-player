@@ -21,7 +21,7 @@ const OtpVerificationPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (otp.length !== 6) {
-      setError("Please enter a 6-digit OTP.");
+      setError("Please enter a 6-digit OTP. Check Your Mail for OTP");
       return;
     }
 

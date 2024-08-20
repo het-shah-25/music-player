@@ -1,6 +1,6 @@
 import axios from "axios";
 import { AXIOS_CLIENT } from "../constants/constants";
-const apiURL = "https://music-player-backend-6nnw.onrender.com";
+const apiURL = "https://music-player-backend-q9p5.onrender.com";
 const axiosClient = axios.create({
   baseURL: apiURL,
   headers: {

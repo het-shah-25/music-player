@@ -15,7 +15,7 @@ const PlaylistsPage = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        "https://music-player-backend-6nnw.onrender.com/playlists",
+        "https://music-player-backend-q9p5.onrender.com/playlists",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -37,7 +37,7 @@ const PlaylistsPage = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.post(
-          "https://music-player-backend-6nnw.onrender.com/playlists/create",
+          "https://music-player-backend-q9p5.onrender.com/playlists/create",
           { name: newPlaylistName },
           {
             headers: { Authorization: `Bearer ${token}` },

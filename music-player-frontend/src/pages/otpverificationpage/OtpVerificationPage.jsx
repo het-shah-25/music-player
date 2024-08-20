@@ -75,7 +75,7 @@ const OtpVerificationPage = () => {
               htmlFor="otp"
               className="block text-sm font-medium text-gray-700 mb-2"
             >
-              Enter 6-digit OTP
+              Enter 6-digit OTP That reseved on your Email
             </label>
             <input
               type="text"

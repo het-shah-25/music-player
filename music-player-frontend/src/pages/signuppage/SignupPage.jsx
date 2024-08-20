@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { notification } from "antd";
 import useAxios from "../../app/hook/useAxios";
 
@@ -44,7 +44,6 @@ const SignupPage = () => {
     }
 
     try {
-      // Send signup request
       const response = await post("/auth/signup", {
         fullName,
         email,
@@ -52,16 +51,14 @@ const SignupPage = () => {
         password,
       });
 
-      // Store email in local storage
       localStorage.setItem("email", email);
-
-      // Redirect to OTP verification page
-      navigate("/otp-verification");
+      navigate("/otp-verification"); // Redirect to OTP verification page after successful signup
     } catch (error) {
       notification.error({
         message: "Signup Failed",
         description:
-          error.message || "An error occurred during signup. Please try again.",
+          error.response?.data.message ||
+          "An error occurred during signup. Please try again.",
       });
     }
   };
@@ -160,12 +157,12 @@ const SignupPage = () => {
         </form>
         <p className="mt-4 text-center text-gray-600">
           Already have an account?{" "}
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="text-purple-600 hover:text-purple-700 font-medium"
           >
             Login
-          </a>
+          </Link>
         </p>
       </div>
     </div>

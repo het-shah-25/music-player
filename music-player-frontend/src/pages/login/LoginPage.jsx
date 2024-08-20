@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { notification } from "antd";
 import useAxios from "../../app/hook/useAxios";
+
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,18 +12,19 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await post("/auth/signin", { email, password }); // Update endpoint as needed
+      const response = await post("/auth/signin", { email, password });
       localStorage.setItem("token", response.token);
       notification.success({
         message: "Login Successful",
         description: "You have successfully logged in.",
       });
-      navigate("/"); // Redirect to a dashboard or another page after login
-      window.location.reload(); // Uncomment if you want to force a page reload
+      navigate("/"); // Redirect to the homepage or dashboard after login
     } catch (error) {
       notification.error({
         message: "Login Failed",
-        description: error.message || "Invalid credentials. Please try again.",
+        description:
+          error.response?.data.message ||
+          "Invalid credentials. Please try again.",
       });
     }
   };
@@ -61,9 +63,9 @@ const LoginPage = () => {
         </form>
         <p className="mt-4 text-center">
           Don't have an account?{" "}
-          <a href="/signup" className="text-blue-500">
+          <Link to="/signup" className="text-blue-500">
             Sign up
-          </a>
+          </Link>
         </p>
       </div>
     </div>

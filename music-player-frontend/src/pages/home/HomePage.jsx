@@ -19,7 +19,7 @@ const HomePage = () => {
     const fetchSongs = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/songs/fetch-songs"
+          "https://music-player-backend-6nnw.onrender.com/songs/fetch-songs"
         );
         const songs = response.data;
 

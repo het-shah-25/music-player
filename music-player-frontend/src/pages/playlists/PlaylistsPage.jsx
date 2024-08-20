@@ -14,9 +14,12 @@ const PlaylistsPage = () => {
   const fetchPlaylists = useCallback(async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:3000/playlists", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await axios.get(
+        "https://music-player-backend-6nnw.onrender.com/playlists",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setPlaylists(response.data);
     } catch (error) {
       console.error("Error fetching playlists:", error);
@@ -34,7 +37,7 @@ const PlaylistsPage = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.post(
-          "http://localhost:3000/playlists/create",
+          "https://music-player-backend-6nnw.onrender.com/playlists/create",
           { name: newPlaylistName },
           {
             headers: { Authorization: `Bearer ${token}` },

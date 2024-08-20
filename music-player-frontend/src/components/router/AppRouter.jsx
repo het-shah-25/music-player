@@ -40,7 +40,7 @@ const AppRouter = () => {
     },
     {
       path: "/signup",
-      element: isLoggedIn ? <Navigate to="/" /> : <SignupPage />,
+      element: <SignupPage />,
     },
     {
       path: "/otp-verification",

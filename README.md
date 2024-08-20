@@ -76,7 +76,7 @@ Ensure you have the following installed:
    npm start
    ```
 
-   The backend will be available at [http://localhost:3001](http://localhost:3001) (default port).
+   The backend will be available at [http://localhost:3000](http://localhost:3000) (default port).
 
 2. **Start the frontend development server:**
 
@@ -85,11 +85,11 @@ Ensure you have the following installed:
    npm start
    ```
 
-   The frontend will be available at [http://localhost:3000](http://localhost:3000).
+   The frontend will be available at [http://localhost:5173](http://localhost:5173).
 
 ## 📜 API Documentation
 
-The backend provides various API endpoints for user management, music management, and playlist handling. For detailed API documentation, please refer to the [Backend README](./backend/README.md).
+The backend provides various API endpoints for user management, music management, and playlist handling. For detailed API documentation, please refer to the [Backend README](./music-player-backend/README.md).
 
 ## 🎨 Frontend Features
 
@@ -99,7 +99,7 @@ The frontend offers a modern and responsive user interface, including:
 - **Playlist Creation:** Create and manage playlists.
 - **User Authentication:** Sign up, sign in, and manage user profiles.
 
-For more details on the frontend, refer to the [Frontend README](./frontend/README.md).
+For more details on the frontend, refer to the [Frontend README](./music-player-frontend/README.md).
 
 ## 🤝 Contributing
 

@@ -9,6 +9,7 @@ const path = require("path");
 const authRoutes = require("./src/routes/authRoutes");
 const songRoutes = require("./src/routes/songRouter");
 const playlistRoutes = require("./src/routes/playlistRouter");
+
 // App initialization
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,12 +25,20 @@ mongoose
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+
+app.use(
+  cors({
+    origin: "*",
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type, Authorization",
+  })
+);
 
 // Routes
 app.use("/auth", authRoutes);
-app.use("/songs", songRoutes); // Use song routes
-app.use("/playlists", playlistRoutes); // Use playlist routes
+app.use("/songs", songRoutes);
+app.use("/playlists", playlistRoutes);
+
 // Start server
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)

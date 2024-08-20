@@ -18,7 +18,8 @@ const LoginPage = () => {
         message: "Login Successful",
         description: "You have successfully logged in.",
       });
-      navigate("/"); // Redirect to the homepage or dashboard after login
+      navigate("/");
+      window.location.reload();
     } catch (error) {
       notification.error({
         message: "Login Failed",

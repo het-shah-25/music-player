@@ -114,7 +114,7 @@ We welcome contributions to the project! To contribute:
 
 ## 📧 Contact
 
-For questions, feedback, or inquiries, please reach out to [your-email@example.com](mailto:your-email@example.com).
+For questions, feedback, or inquiries, please reach out to [shah2002het@gmail.com](mailto:shah2002het@gmail.com).
 
 ## 📝 License
 

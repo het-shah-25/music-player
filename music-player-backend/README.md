@@ -61,7 +61,7 @@ Make sure you have the following installed:
 1. **Start the server:**
 
    ```bash
-   npm start
+   nodemon app.js
    ```
 
 2. **Access the API:**
